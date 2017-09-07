@@ -1,6 +1,5 @@
 # Fa-GD
-This Library forked from PersianRender 
-https://github.com/mahmoud-eskandari/PersianRender
+This Library forked from [PersianRender](https://github.com/mahmoud-eskandari/PersianRender)
 
 
 # Installation
@@ -19,14 +18,14 @@ You can install this package using [composer](https://getcomposer.org). Add this
 
 ```
 
- \FAGD\PPersianRender::render('کتابخانه ی رندر GD image در php');
+ \FaGD\PPersianRender::render('کتابخانه ی رندر GD image در php');
 
 ```
 
 using in the Gd image
 ```
 
-  $text  = \FAGD\PPersianRender::render('فارسی',true); //Reversed text for GD
+  $text  = \FaGD\PPersianRender::render('فارسی',true); //Reversed text for GD
   
   imagettftext ( $image ,  $size ,  $angle , $x , $y ,$color , $fontfile , $text );
   
