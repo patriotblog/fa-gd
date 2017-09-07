@@ -1,20 +1,20 @@
 <?php
 
-namespace PPersianRender;
+namespace FaGD;
 /**
  * The GNU License (GNU v 3.0)
  *
  * Coyright Under GNU 2.0 License.
- * Copyright 2017 Webafrooz.com.
- * @package    PersianRender
- * @author     Mahmoud Eskandari <info@webafrooz.com>
- * @copyright  20017 mahmoud eskandari
- * @link       https://github.com/mahmoud-eskandari/PersianRender
- * @see        PersianRender
+ * Copyright 2017 This Library forked from https://github.com/mahmoud-eskandari/PersianRender
+ * @package    Fa-GD
+ * @author     MohammadAli Taebi <taebi.ali@gmail.com>
+ * @copyright  20017 MohammadAli Taebi
+ * @link       https://github.com/patriotblog/fa-gd
+ * @see        Fa-GD
  * @version    0.1
  */
 
-class PersianRender
+class PPersianRender
 {
     /**
      * Charachter List

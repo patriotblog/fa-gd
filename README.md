@@ -9,7 +9,7 @@ You can install this package using [composer](https://getcomposer.org). Add this
 
 ```
 "require": {
-	"eskandari/persianrender": "dev-master"
+	"patriotblog/fa-gd": "dev-master"
 }
 ```
 
@@ -17,14 +17,14 @@ You can install this package using [composer](https://getcomposer.org). Add this
 
 ```
 
- \PersianRender\PersianRender::render('کتابخانه ی رندر GD image در php');
+ \FAGD\PPersianRender::render('کتابخانه ی رندر GD image در php');
 
 ```
 
 using in the Gd image
 ```
 
-  $text  = \PersianRender\PersianRender::render('فارسی',true); //Reversed text for GD
+  $text  = \FAGD\PPersianRender::render('فارسی',true); //Reversed text for GD
   
   imagettftext ( $image ,  $size ,  $angle , $x , $y ,$color , $fontfile , $text );
   
