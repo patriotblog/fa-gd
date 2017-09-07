@@ -97,9 +97,11 @@ class PersianRender
 
         if($reverse) {
             $out = array_reverse($out);
+            $text = implode('', $out);
+            return self::en_letter_handler($text);
+        }else{
+            return implode('', $out);
         }
-
-        return implode('', $out);
     }
 
     /**
@@ -158,6 +160,39 @@ class PersianRender
             return self::$N_LIST[$char][0];
         }
         return $char;
+    }
+
+    private static function en_letter_handler($text){
+        $en_letters = 'abcdefghijklmnopqrstuvwxyz';
+        $en_letters .= 'ABCDEFGHIJKLMNOPQRESTUVWXYZ';
+
+        $tmp = '';
+        $words = [];
+        for($i=0; $i<mb_strlen($text); $i++){
+            $item = mb_substr($text, $i, 1);
+            if(strpos($en_letters, $item)>-1){
+                $tmp .= $item;
+                continue;
+            }elseif($item == ' ' && !empty($tmp)) {
+                $words[] = $tmp;
+                $tmp = '';
+            }
+        }
+
+        foreach ($words as $word) {
+            $reverse = self::reverse($word);
+            $text = str_replace($word, $reverse, $text);
+        }
+
+        return $text;
+    }
+
+    private static function reverse($text){
+        $reverse = '';
+        for($i=mb_strlen($text); $i>=0; $i--){
+            $reverse .= mb_substr($text, $i, 1);
+        }
+        return $reverse;
     }
 
     /**
