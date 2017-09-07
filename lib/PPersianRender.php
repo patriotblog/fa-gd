@@ -73,7 +73,7 @@ class PPersianRender
     {
         //
         $str = str_replace(['ي', "\0"], ['ی', ''], $str);
-        $str = self::numeric_replace($str);
+        $str = self::numeric_replace($str, true);
         $str = self::mb_str_split(trim($str));
         $out = [];
 
@@ -98,10 +98,12 @@ class PPersianRender
         if($reverse) {
             $out = array_reverse($out);
             $text = implode('', $out);
-            return self::en_letter_handler($text);
+            $string =  self::en_letter_handler($text);
         }else{
-            return implode('', $out);
+            $string =  implode('', $out);
         }
+
+        return self::numeric_replace($string);
     }
 
     /**
@@ -165,6 +167,7 @@ class PPersianRender
     private static function en_letter_handler($text){
         $en_letters = 'abcdefghijklmnopqrstuvwxyz';
         $en_letters .= 'ABCDEFGHIJKLMNOPQRESTUVWXYZ';
+        $en_letters .= '1234567890';
 
         $tmp = '';
         $words = [];
