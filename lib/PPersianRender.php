@@ -188,6 +188,10 @@ class PPersianRender
             }
         }
 
+        if(!empty($tmp)) {
+            $words[] = $tmp;
+        }
+
         foreach ($words as $word) {
             $reverse = self::reverse($word);
             $text = str_replace($word, $reverse, $text);
