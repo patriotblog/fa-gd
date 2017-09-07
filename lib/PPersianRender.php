@@ -61,6 +61,8 @@ class PPersianRender
         'إ' => ['ﺈ', 'ﺈ', 'ﺇ'],
         'ئ' => ['ﺊ', 'ﺌ', 'ﺋ'],
         'ة' => ['ﺔ', 'ﺘ', 'ﺗ'],
+        '»' => ['« ', '', ' »'],
+        '«' => [' »', '', '« '],
     ];
 
     /**
@@ -169,11 +171,15 @@ class PPersianRender
         $en_letters .= 'ABCDEFGHIJKLMNOPQRESTUVWXYZ';
         $en_letters .= '1234567890';
 
+
+
+        $delimiters = [' ', PHP_EOL];
+
         $tmp = '';
         $words = [];
         for($i=0; $i<mb_strlen($text); $i++){
             $item = mb_substr($text, $i, 1);
-            if(strpos($en_letters, $item)>-1 or ($item==' ' and !empty($tmp))){
+            if(strpos($en_letters, $item)>-1 or (in_array($item, $delimiters) && !empty($tmp))){
                 $tmp .= $item;
                 continue;
             }elseif(!empty($tmp)) {
