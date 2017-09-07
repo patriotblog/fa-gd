@@ -192,6 +192,8 @@ class PPersianRender
             $words[] = $tmp;
         }
 
+        usort($words,'self::sort');
+
         foreach ($words as $word) {
             $reverse = self::reverse($word);
             $text = str_replace($word, $reverse, $text);
@@ -199,6 +201,12 @@ class PPersianRender
 
         return $text;
     }
+
+    private static function sort($a,$b){
+        return strlen($b)-strlen($a);
+    }
+
+
 
     private static function reverse($text){
         $reverse = '';
