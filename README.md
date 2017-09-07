@@ -1,4 +1,6 @@
-# PersianRender
+# Fa-GD
+This Library forked from PersianRender 
+https://github.com/mahmoud-eskandari/PersianRender
 
 
 # Installation
