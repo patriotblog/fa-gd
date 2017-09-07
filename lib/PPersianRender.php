@@ -165,7 +165,6 @@ class PPersianRender
     private static function en_letter_handler($text){
         $en_letters = 'abcdefghijklmnopqrstuvwxyz';
         $en_letters .= 'ABCDEFGHIJKLMNOPQRESTUVWXYZ';
-        $en_letters .= ' ';
 
         $tmp = '';
         $words = [];
