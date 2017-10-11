@@ -228,7 +228,7 @@ class PPersianRender
             do {
                 $parts[] = mb_substr($string, 0, $string_length);
                 $string = mb_substr($string, $string_length);
-            } while(!empty($string));
+            } while(!empty($string) || (strlen($string) > 0));
         } else {
             $parts = array($string);
         }
